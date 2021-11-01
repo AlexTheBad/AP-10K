@@ -115,7 +115,7 @@ The dataset and corresponding files can be downloaded from
 
 (Optional) The full version with both labeled and unlabeled images can be downloaded with the script provided here 
 
-<a href='https://drive.google.com/file/d/1aIZwekaVa2AhaDPXOHD9MVaoFHU65vhJ/view?usp=sharing'>[Google Drive]</a> <a href='https://pan.baidu.com/s/1rvOSfaHKGG5F7XafGyAe3w'>[Baidu Pan]</a> (code: a8yf)
+<a href='https://drive.google.com/file/d/1HNBy7fzF7EgIzM1JTJFYwpQFaWjwDeXD/view?usp=sharing'>[Google Drive]</a> <a href='https://pan.baidu.com/s/16ev1YnI6ZS3CwpEQ-jtmPg'>[Baidu Pan]</a> (code: 5lxi)
 
 
 ## Training Code
