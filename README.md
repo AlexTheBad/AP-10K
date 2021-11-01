@@ -146,7 +146,7 @@ AP-10K
 ├── tests
 ├── tools
 ├── configs
-`── data
+|── data
     │── ap10k
         │-- annotations
         │   │-- ap10k-train-split1.json
