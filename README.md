@@ -179,7 +179,7 @@ python tools/test.py <CONFIG_FILE> <DET_CHECKPOINT_FILE>
 bash tools/dist_train.sh <CONFIG_FILE> <GPU_NUM>
 ```
 
-For example, to train the HRNet-w32 model with 1 GPU for training, please run:
+For example, to train the HRNet-w32 model with 1 GPU, please run:
 
 ```python
 bash tools/dist_train.sh configs/animal/2d_kpt_sview_rgb_img/topdown_heatmap/ap10k/hrnet_w32_ap10k_256x256.py 1
