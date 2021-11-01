@@ -1,0 +1,26 @@
+Collections:
+- Metadata:
+    Architecture:
+    - HRNetv2
+    - DarkPose
+  Name: hand--2d_kpt_sview_rgb_img--topdown_heatmap--panoptic2d--hrnetv2_dark_panoptic2d
+    [HRNetv2+DarkPose@CMU Panoptic HandDB]
+  Paper:
+    Title: Distribution-aware coordinate representation for human pose estimation
+    URL: http://openaccess.thecvf.com/content_CVPR_2020/html/Zhang_Distribution-Aware_Coordinate_Representation_for_Human_Pose_Estimation_CVPR_2020_paper.html
+  README: configs/hand/2d_kpt_sview_rgb_img/topdown_heatmap/panoptic2d/hrnetv2_dark_panoptic2d.md
+Models:
+- Config: configs/hand/2d_kpt_sview_rgb_img/topdown_heatmap/panoptic2d/hrnetv2_w18_panoptic_256x256_dark.py
+  In Collection: hand--2d_kpt_sview_rgb_img--topdown_heatmap--panoptic2d--hrnetv2_dark_panoptic2d
+    [HRNetv2+DarkPose@CMU Panoptic HandDB]
+  Metadata:
+    Training Data: CMU Panoptic HandDB
+  Name: topdown_heatmap_hrnetv2_w18_panoptic_256x256_dark
+  Results:
+  - Dataset: CMU Panoptic HandDB
+    Metrics:
+      AUC: 0.745
+      EPE: 7.77
+      PCKh@0.7: 0.999
+    Task: Hand 2D Keypoint
+  Weights: https://download.openmmlab.com/mmpose/hand/dark/hrnetv2_w18_panoptic_256x256_dark-1f1e4b74_20210330.pth
