@@ -110,6 +110,44 @@ The paper is post on <a href="https://arxiv.org/abs/2108.12617">arxiv</a>! We ha
 <img src="images/Overview_species1.jpg" width="380" height='430'><img src="images/Overview_species2.jpg" width="380" height='430'>
 </p>
 
+### Image Background
+<table div align=center>
+<thead>
+  <tr>
+    <th>Id</th>
+    <th>Background type</th>
+    <th>Id</th>
+    <th>Background type</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>1</td>
+    <td>grass or savanna</td>
+    <td>2</td>
+    <td>forest or shrub</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>mud or rock</td>
+    <td>4</td>
+    <td>snowfield</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>zoo or human habitation</td>
+    <td>6</td>
+    <td>swamp or rivderside</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>desert or gobi</td>
+    <td>8</td>
+    <td>mugshot</td>
+  </tr>
+</tbody>
+</table>
+
 ## Download
 
 The dataset and corresponding files can be downloaded from 
@@ -188,4 +226,26 @@ For example, to train the HRNet-w32 model with 1 GPU, please run:
 bash tools/dist_train.sh configs/animal/2d_kpt_sview_rgb_img/topdown_heatmap/ap10k/hrnet_w32_ap10k_256x256.py 1
 ```
 
+## Key Questions
+### 1.For what purpose was the dataset created?
+AP-10K is created to facilitate research in the area of animal pose estimation. It is important to study several challenging questions in the context of more training data from diverse species are available, such as：
+1) how about the performance of different representative human pose models on the animal pose estimation task? 
+2) will the representation ability of a deep model benefit from training on a large-scale dataset with diverse species?
+3) how about the impact of pretraining, e.g., on the ImageNet dataset or human pose estimation dataset, in the context of the large-scale of dataset with diverse species?
+4) how about the intra and inter family generalization ability of a model trained using data from specific species or family?
 
+However, previous datasets for animal pose estimation contain limited number of animal species. Therefore, it is impossible to study these questions using existing datasets as they contains at most 5 species, which is far from enough to get sound conclusion. By contrast, AP-10K has 23 family and 54 species and thus can help researchers to study these questions.
+
+### 2.Was any cleaning of the data done?
+We removed replicated images by using aHash algorithm to detect similar images and manually checking. Images with heavy occlusion and logos were removed manually. The cleaned images were categorized into diifferent species and family.
+
+### 3.How were the keypoints instructed to be labeled?
+Annotators first learned about the physiognomy, body structure and distribution of keypoints of the animals. Then, five images of each species were presented to annotators to annotate keypoints, which were used to assess their annotation quality. Annotators with good annotation quality were further trained on how to deal with the partial absence of the body due to occlusion and were involved in the subsequent annotation process. Annotators were asked to annotate all visible keypoints. For the occluded keypoints, they were asked to annotate keypoints whose location they could estimate based on body plan, pose, and the symmetry property of the body, where the length of occluded limbs or the location of occluded keypoints could be inferred from the visible limbs or keypoints. Other keypoints were left unlabeled.
+
+To guarantee the annotation quality, we have adopted a sequential labeling strategy. Three rounds of cross-check and correction are conducted with both manual check and automatic check (according to specific rules, \eg, keypoints belonging to an instance are in the same bounding box) to reduce the possibility of mislabeling. To begin with, annotators labeled keypoints of each instance and submited a version-1 labels to senior well-trained annotators, and then senior well-trained annotators checked the quality of the version-1 labels and returned an error list to annotators, annotators would fix these errors according to it. Finally, annotators submited a fixed version-2 labels to senior well-trained annotator and they did the last correction to find any potential mislabeled keypoints. After all three rounds of work had been done, a release-version of dataset with high-quality labels was finished.
+
+### 4.Unity of keypoint and difference of walk type
+If we only follow the biology and define the keypoints by the position of the bones, the actual labeled keypoint maybe hard, even invisible for labeling and which look like inharmonious with animal’s movement. Ungulates (or other unguligrade animals) mainly rely on their toes in movement, with their paws, ankles, and knees observable. Compared with these keypoints, the actual hips are less distinctive and difficult to annotate since they are hidden in their body. A similar phenomenon can also be observed in digitigrade animals. On the other hand, plantigrade animals always walk with metatarsals (paws) flat on the ground, with their paws, knees, and hips more distinguishable in movement. Thus, we denote the paws, ankles, and knees for the unguligrade and digitigrade animals, and the paws, knees, and hips for the plantigrade animals. For simplicity, we use 'hip' to denote the knees for unguligrade and digitigrade animals and 'knee' for their ankles. For plantigrade animals, the annotation is the same as the biology definition. Thus, the visual distribution of keypoints is similar across the dataset, as the 'knee' is around the middle of the limbs for all animals.
+
+### 5.What tasks could the dataset be used for?
+AP-10K can be used for the research of animal pose estimation. Besides, it can also be used for specific machine learning topics such as few-shot learning, domain generalization, self-supervised learning. Please see the Discussion part in the paper.
