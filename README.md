@@ -6,7 +6,9 @@
   <a href="#Updates">Updates</a> |
   <a href="#Overview">Overview</a> |
   <a href="#download">Download</a> |
-  <a href="#training-code">Training Code</a>
+  <a href="#training-code">Training Code</a> |
+  <a href="#key-questions">Key Questions</a> |
+  <a href="#license">License</a> 
 </p>
 
 ## Introduction
@@ -249,3 +251,7 @@ If we only follow the biology and define the keypoints by the position of the bo
 
 ### 5. What tasks could the dataset be used for?
 AP-10K can be used for the research of animal pose estimation. Besides, it can also be used for specific machine learning topics such as few-shot learning, domain generalization, self-supervised learning. Please see the Discussion part in the paper.
+
+## License
+
+The dataset follows CC-BY-4.0 license.
