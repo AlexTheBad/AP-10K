@@ -168,7 +168,7 @@ Here we provide the example of training models with the AP-10K dataset. The code
 
 ### Installation
 
-Please refer to <a href='https://github.com/open-mmlab/mmpose/blob/master/docs/install.md'>install.md</a> for Installation.
+Please refer to <a href='https://github.com/open-mmlab/mmpose/blob/master/docs/en/install.md'>install.md</a> for Installation.
 
 ### Dataset Preparation
 
