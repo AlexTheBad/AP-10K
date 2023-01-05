@@ -256,6 +256,17 @@ AP-10K can be used for the research of animal pose estimation. Besides, it can a
 
 The dataset follows CC-BY-4.0 license.
 
+<p align="justify">If you are interested in our work, please consider citing the following:</p>
+
+```
+@inproceedings{yu2021ap,
+  title={AP-10K: A Benchmark for Animal Pose Estimation in the Wild},
+  author={Yu, Hang and Xu, Yufei and Zhang, Jing and Zhao, Wei and Guan, Ziyu and Tao, Dacheng},
+  booktitle={Thirty-fifth Conference on Neural Information Processing Systems Datasets and Benchmarks Track (Round 2)},
+  year={2021}
+}
+```
+
 ## Relevant Projects
 
 [1] <strong>APT-36K: A Large-scale Benchmark for Animal Pose Estimation and Tracking, Neurips, 2022</strong> | [Paper](https://arxiv.org/abs/2206.05683) | [Github](https://github.com/pandorgan/APT-36K)
